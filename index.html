@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Tracker</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #ffffffcc;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #ff7eb3;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff4f7a;
+        }
+
+        .result-box {
+            background: rgba(255, 255, 255, 0.3);
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            text-align: left;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-box p {
+            margin: 5px 0;
+        }
+
+        .result-box strong {
+            color: #ffeb3b;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>COVID-19 Tracker</h1>
+        <p class="subtitle">Get real-time COVID-19 data</p>
+
+        <div class="input-group">
+            <input type="text" id="country" placeholder="Enter country name" aria-label="true">
+            <input type="date" id="date" aria-label="true">
+        </div>
+
+        <button onclick="fetchCovidData()">Get Data</button>
+
+        <div id="result" class="result-box"></div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
